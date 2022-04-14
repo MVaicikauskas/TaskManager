@@ -38,7 +38,7 @@ class Task
         //Connecting to database
         self::$conn = $db;
         //Gathering data from DB
-        $sql = "SELECT * FROM ".self::$table;
+        $sql = "SELECT * FROM ".self::$table." ORDER BY deadline";
         $query = self::$conn->prepare($sql);
         $query->execute();
         $result = $query->fetchAll();
